@@ -4,11 +4,11 @@ function getComputerchoice(){
     let rand = Math.random();
 
     if(rand <=0.4){
-        return "Paper";
+        return "paper";
     }else if(0.41 <=rand <=0.69){
-        return "Rock";
+        return "rock";
     }else if(0.7<= rand <= 1){
-        return "Scissor";
+        return "scissor";
     }
 }
 
@@ -66,22 +66,20 @@ function playGame(){
         }
     }
 
-    console.log(playRound(getComputerchoice(),getHumanChoice()))
-
-    // let winner = undefined;
-    // for(let i = 1; i<=5; i++){
-    //     winner = playRound(getComputerchoice(), getHumanChoice());
-    //     if( winner = 'human'){
-    //         humanScore += 1;
-    //     }else if(winner = 'computer'){
-    //         computerScore += 1;
-    //     }else if(winner = 'tie'){
-    //         humanScore += 0.1;
-    //         computerScore += 0.1;
-    //     }else{
-    //         console.log("somethings awry");
-    //     }
-    // }
+    let winner = undefined;
+    for(let i = 1; i<=5; i++){
+        winner = playRound(getComputerchoice(), getHumanChoice());
+        if( winner == 'human'){
+            humanScore += 1;
+        }else if(winner =='computer'){
+            computerScore += 1;
+        }else if(winner == 'tie'){
+            humanScore += 0.1;
+            computerScore += 0.1;
+        }else{
+            console.log("somethings awry");
+        }
+    }
     if(humanScore>computerScore){
         console.log(`the game is over and you won ${humanScore} to ${computerScore} `);
     }else if(humanScore<computerScore){
