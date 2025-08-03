@@ -1,4 +1,4 @@
-console.log("hello, world 1")
+console.log("Wellcome to where you can play rock paper scissors!")
 
 // generates randomized choices between [paper, rock, scissosr] by using math.random()
 function getComputerchoice(){
@@ -30,8 +30,6 @@ function getHumanChoice(){
         return "no";
     }
 }
-
-
 
 
 function playGame(){
