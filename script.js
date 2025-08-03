@@ -17,7 +17,7 @@ function getComputerchoice(){
 function getHumanChoice(){
     let Choice = prompt("Rock, Paper or Scissor?", "paper");
     Choice = Choice.toLowerCase();
-    console.log(Choice);
+    // console.log(Choice);
 
     if(Choice == "rock"){
         return "rock";
@@ -40,6 +40,7 @@ function playGame(){
     // rock paper scissors and checks the human and computer choices 
     // against eachother and returns the winner of the round
     function playRound(computer, human){
+        console.log(human, computer)
         if(human == 'no'){
             console.log('That is not in the Rules!');
         }
@@ -62,7 +63,6 @@ function playGame(){
         }else if(human=='scissor' && computer=='paper'){
             return 'human';
         }
-        console.log(computer, human);
     }
 
     let winner = undefined;
