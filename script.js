@@ -1,5 +1,6 @@
 console.log("hello, world 1")
 
+// generates randomized choices between [paper, rock, scissosr] by using math.random()
 function getComputerchoice(){
     let rand = Math.random();
 
@@ -12,7 +13,7 @@ function getComputerchoice(){
     }
 }
 
-
+// to get the human choice with prompt function
 function getHumanChoice(){
     let Choice = prompt("Rock, Paper or Scissor?", "paper");
     Choice = Choice.toLowerCase();
@@ -37,10 +38,12 @@ function playGame(){
     let humanScore = 0;
     let computerScore = 0;
 
-
+    // this function runs through the 9 possible outcomes of 
+    // rock paper scissors and checks the human and computer choices 
+    // against eachother and returns the winner of the round
     function playRound(computer, human){
         if(human == 'no'){
-            console.log('it is the prompt');
+            console.log('That is not in the Rules!');
         }
         if(human=='rock' && computer=='rock'){
             return 'tie';
@@ -60,10 +63,8 @@ function playGame(){
             return 'computer';
         }else if(human=='scissor' && computer=='paper'){
             return 'human';
-        }else{
-            console.log(computer, human);
-            console.log("unknown case");
         }
+        console.log(computer, human);
     }
 
     let winner = undefined;
@@ -71,11 +72,16 @@ function playGame(){
         winner = playRound(getComputerchoice(), getHumanChoice());
         if( winner == 'human'){
             humanScore += 1;
+            computerScore += 0;
+            console.log(humanScore, computerScore);
         }else if(winner =='computer'){
             computerScore += 1;
+            humanScore += 0;
+            console.log(humanScore, computerScore);
         }else if(winner == 'tie'){
-            humanScore += 0.1;
-            computerScore += 0.1;
+            humanScore += 0;
+            computerScore += 0;
+            console.log(humanScore, computerScore);
         }else{
             console.log("somethings awry");
         }
